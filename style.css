@@ -8,14 +8,20 @@
 body{
     overflow:hidden;
     background:#b30000;
-    height:100vh;
+    min-height:100svh;
+    position:relative;
 }
 
+/* Container */
+
 #heartContainer{
-    position:absolute;
+    position:fixed;
+    inset:0;
     width:100%;
     height:100%;
 }
+
+/* Small Hearts */
 
 .smallHeart{
     position:absolute;
@@ -40,6 +46,8 @@ body{
 
 }
 
+/* Big Heart */
+
 #bigHeart{
     position:absolute;
     left:50%;
@@ -56,12 +64,12 @@ body{
 
 @keyframes growHeart{
 
-    0%{
+    from{
         transform:translate(-50%,-50%) scale(0);
         opacity:0;
     }
 
-    100%{
+    to{
         transform:translate(-50%,-50%) scale(1);
         opacity:1;
     }
@@ -90,36 +98,33 @@ body{
 
 }
 
-#message{
+/* Message */
 
+#message{
     position:absolute;
     left:50%;
     top:50%;
     transform:translate(-50%,-50%);
     text-align:center;
     display:none;
+    width:90%;
     animation:fadeIn 2s forwards;
-
 }
 
 #message h1{
-
     color:white;
     font-size:55px;
     margin-bottom:20px;
     text-shadow:0 0 15px white;
-
 }
 
 #message img{
-
     width:260px;
     height:260px;
     object-fit:cover;
     border-radius:50%;
     border:8px solid white;
     box-shadow:0 0 35px white;
-
 }
 
 @keyframes fadeIn{
@@ -136,14 +141,14 @@ body{
 
 }
 
-.floating{
+/* Floating Hearts */
 
+.floating{
     position:absolute;
     color:white;
     font-size:18px;
     animation:float 8s linear infinite;
     opacity:.7;
-
 }
 
 @keyframes float{
@@ -160,6 +165,54 @@ body{
     100%{
         transform:translateY(-120vh);
         opacity:0;
+    }
+
+}
+
+/* ========================= */
+/* Responsive */
+/* ========================= */
+
+@media (max-width:768px){
+
+    #bigHeart{
+        font-size:130px;
+    }
+
+    #message h1{
+        font-size:36px;
+    }
+
+    #message img{
+        width:220px;
+        height:220px;
+    }
+
+}
+
+@media (max-width:480px){
+
+    #bigHeart{
+        font-size:100px;
+    }
+
+    #message h1{
+        font-size:28px;
+        line-height:1.3;
+    }
+
+    #message img{
+        width:180px;
+        height:180px;
+        border-width:6px;
+    }
+
+    .smallHeart{
+        font-size:18px;
+    }
+
+    .floating{
+        font-size:14px;
     }
 
 }
