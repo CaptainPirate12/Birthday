@@ -1,29 +1,32 @@
 const container = document.getElementById("heartContainer");
 
+// Create small hearts
 for (let i = 0; i < 120; i++) {
 
-    let h = document.createElement("div");
+    const heart = document.createElement("div");
 
-    h.className = "smallHeart";
+    heart.className = "smallHeart";
 
-    h.innerHTML = "❤";
+    heart.innerHTML = "❤";
 
-    h.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.left = Math.random() * window.innerWidth + "px";
 
-    h.style.top = Math.random() * window.innerHeight + "px";
+    heart.style.top = Math.random() * window.innerHeight + "px";
 
-    h.style.animationDelay = (Math.random() * 2) + "s";
+    heart.style.animationDelay = (Math.random() * 2) + "s";
 
-    container.appendChild(h);
+    container.appendChild(heart);
 
 }
 
+// Show big heart
 setTimeout(() => {
 
     document.getElementById("bigHeart").classList.add("grow");
 
 }, 4500);
 
+// Pop the heart
 setTimeout(() => {
 
     const heart = document.getElementById("bigHeart");
@@ -34,31 +37,33 @@ setTimeout(() => {
 
 }, 7000);
 
+// Show birthday message
 setTimeout(() => {
 
     document.getElementById("message").style.display = "block";
 
 }, 7700);
 
+// Floating hearts forever
 function floatingHearts() {
 
-    let h = document.createElement("div");
+    const heart = document.createElement("div");
 
-    h.className = "floating";
+    heart.className = "floating";
 
-    h.innerHTML = "❤";
+    heart.innerHTML = "❤";
 
-    h.style.left = Math.random() * 100 + "vw";
+    heart.style.left = Math.random() * 100 + "vw";
 
-    h.style.fontSize = (15 + Math.random() * 25) + "px";
+    heart.style.fontSize = (15 + Math.random() * 25) + "px";
 
-    h.style.animationDuration = (5 + Math.random() * 5) + "s";
+    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
 
-    document.body.appendChild(h);
+    document.body.appendChild(heart);
 
     setTimeout(() => {
 
-        h.remove();
+        heart.remove();
 
     }, 10000);
 
