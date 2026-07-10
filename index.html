@@ -1,186 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Will You Be My Valentine💕</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(135deg, #ff758c, #ff7eb3);
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      overflow: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Julie ❤️</title>
 
-    .card {
-      background: rgba(255, 255, 255, 0.18);
-      padding: 40px;
-      border-radius: 25px;
-      max-width: 420px;
-      text-align: center;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
-      position: relative;
-    }
-
-    h1 {
-      font-size: 2.6em;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      font-weight: normal;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 1.1em;
-      line-height: 1.7;
-    }
-
-    .heart {
-      font-size: 3.5em;
-      margin: 20px 0;
-      animation: beat 1.2s infinite;
-    }
-
-    @keyframes beat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.25); }
-    }
-
-    .buttons {
-      margin-top: 30px;
-      position: relative;
-      height: 60px;
-    }
-
-    button {
-      padding: 12px 26px;
-      font-size: 1em;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .yes {
-      background: #ff2f68;
-      color: white;
-    }
-
-    .no {
-      background: #ffffff;
-      color: #ff2f68;
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-
-    .yes:hover {
-      background: #ff0048;
-    }
-
-    .message {
-      display: none;
-      margin-top: 25px;
-      font-size: 1.3em;
-      font-weight: bold;
-    }
-
-    footer {
-      margin-top: 25px;
-      font-size: 0.95em;
-      opacity: 0.95;
-    }
-
-    /* Floating hearts */
-    .floating-heart {
-      position: absolute;
-      font-size: 20px;
-      animation: float 6s linear infinite;
-      opacity: 0.8;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(100vh) scale(1);
-        opacity: 0;
-      }
-      20% { opacity: 1; }
-      100% {
-        transform: translateY(-10vh) scale(1.5);
-        opacity: 0;
-      }
-    }
-  </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="card">
-    <h1>HI My Wifey Arriane S. Losanta 💕</h1>
-    <h2>Will you be my Valentine in this coming Feb 14, 2026?</h2>
+    <div id="heartContainer"></div>
 
-    <div class="heart">❤️</div>
+    <div id="bigHeart">❤️</div>
 
-    <p>
-      Out of all the moments in my life,  
-      my favorite ones are the moments with you.  
-      This Valentine’s Day, I just want one thing —
-      <br><strong>you.</strong>
-    </p>
-
-    <p>
-      📅 <strong>February 14</strong><br>
-      📍 <strong>Wherever love takes us</strong>
-    </p>
-
-    <div class="buttons">
-      <button class="yes" onclick="sayYes()">Yes 💖</button>
-      <button class="no" id="noBtn" onmouseover="moveNo()">No 🙈</button>
+    <div id="message">
+        <h1>Happy Birthday Julie! ❤️</h1>
+        <img src="julie.jpg" alt="Julie">
     </div>
 
-    <div class="message" id="loveMessage">
-      YAY!!! 💘  
-      I can’t wait to spend Valentine’s Day with you 🥰
-    </div>
-
-    <footer>
-      — Forever yours, <strong>Lorenz Marl M. Busito</strong>
-    </footer>
-  </div>
-
-  <script>
-    function sayYes() {
-      document.getElementById("loveMessage").style.display = "block";
-      createHearts();
-    }
-
-    function moveNo() {
-      const btn = document.getElementById("noBtn");
-      const x = Math.random() * 250;
-      const y = Math.random() * 80;
-      btn.style.transform = `translate(-${x}px, ${y}px)`;
-    }
-
-    function createHearts() {
-      for (let i = 0; i < 20; i++) {
-        const heart = document.createElement("div");
-        heart.classList.add("floating-heart");
-        heart.innerHTML = "❤️";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = (3 + Math.random() * 3) + "s";
-        document.body.appendChild(heart);
-
-        setTimeout(() => {
-          heart.remove();
-        }, 6000);
-      }
-    }
-  </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
