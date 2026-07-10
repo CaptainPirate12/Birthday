@@ -1,0 +1,165 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    overflow:hidden;
+    background:#b30000;
+    height:100vh;
+}
+
+#heartContainer{
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+
+.smallHeart{
+    position:absolute;
+    color:#ffb6c1;
+    font-size:25px;
+    animation:moveToCenter 4s linear forwards;
+}
+
+@keyframes moveToCenter{
+
+    0%{
+        transform:translate(0,0) scale(.8);
+        opacity:1;
+    }
+
+    100%{
+        left:50%;
+        top:50%;
+        transform:translate(-50%,-50%) scale(.3);
+        opacity:1;
+    }
+
+}
+
+#bigHeart{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%) scale(0);
+    font-size:180px;
+    color:#ff4d6d;
+    opacity:0;
+}
+
+.grow{
+    animation:growHeart 2s forwards;
+}
+
+@keyframes growHeart{
+
+    0%{
+        transform:translate(-50%,-50%) scale(0);
+        opacity:0;
+    }
+
+    100%{
+        transform:translate(-50%,-50%) scale(1);
+        opacity:1;
+    }
+
+}
+
+.pop{
+    animation:popHeart .7s forwards;
+}
+
+@keyframes popHeart{
+
+    0%{
+        transform:translate(-50%,-50%) scale(1);
+        opacity:1;
+    }
+
+    50%{
+        transform:translate(-50%,-50%) scale(1.4);
+    }
+
+    100%{
+        transform:translate(-50%,-50%) scale(0);
+        opacity:0;
+    }
+
+}
+
+#message{
+
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    display:none;
+    animation:fadeIn 2s forwards;
+
+}
+
+#message h1{
+
+    color:white;
+    font-size:55px;
+    margin-bottom:20px;
+    text-shadow:0 0 15px white;
+
+}
+
+#message img{
+
+    width:260px;
+    height:260px;
+    object-fit:cover;
+    border-radius:50%;
+    border:8px solid white;
+    box-shadow:0 0 35px white;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translate(-50%,-40%);
+    }
+
+    to{
+        opacity:1;
+        transform:translate(-50%,-50%);
+    }
+
+}
+
+.floating{
+
+    position:absolute;
+    color:white;
+    font-size:18px;
+    animation:float 8s linear infinite;
+    opacity:.7;
+
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
+
+}
